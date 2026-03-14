@@ -9,16 +9,16 @@ st.title("Child off-track screening")
 # ---- Depression items (3 questions) ----
 st.subheader("Depression symptoms")
 # Instruction (shown once)
-st.write("Over the last 2 weeks, how often have you been bothered by the following problems?")
+#st.write("Over the last 2 weeks, how often have you been bothered by the following problems?")
 dep_options = {
     "Not at all": 0,
     "Several days": 1,
     "More than half the days": 2,
     "Nearly every day": 3
 }
-dep1 = st.selectbox("Little interest or pleasure in doing things", list(dep_options.keys()))
-dep2 = st.selectbox("Feeling down, depressed, or hopeless", list(dep_options.keys()))
-dep3 = st.selectbox("Thought that you would be better off dead or of hurting yourself in some way", list(dep_options.keys()))
+dep1 = st.selectbox("In the last 2 weeks, have you had little interest or pleasure in doing things", list(dep_options.keys()))
+dep2 = st.selectbox("In the last 2 weeks, have you felt down, depressed, or hopeless", list(dep_options.keys()))
+dep3 = st.selectbox("In the last 2 weeks, have you thought that you would be better off dead or of hurting yourself in some way", list(dep_options.keys()))
 
 depression_total = dep_options[dep1]+  dep_options[dep2] +  dep_options[dep3]
 st.write(f'Depression total score:{depression_total}')
@@ -26,7 +26,7 @@ st.write(f'Depression total score:{depression_total}')
 # ---- Anxiety items (2 questions) ----
 st.subheader("Anxiety symptoms")
 # Instruction (shown once)
-st.write("Over the last 2 weeks, how often have you been bothered by the following problems?")
+#st.write("Over the last 2 weeks, how often have you been bothered by the following problems?")
 anx_options = {
     "Not at all": 0,
     "Several days": 1,
@@ -46,26 +46,26 @@ env_options = {
     "Yes": 1,
     
 }
-env1 = st.selectbox("Una mnyama yeyote mnayemueka kwa nyumba kuwafurahisha?", list(env_options.keys()))
-env2 = st.selectbox("Je, una marafiki wowote wenye watoto wenye umri sawa na mtoto wako?", list(env_options.keys()))
+env1 = st.selectbox("Do you have any pets that you keep at home? (including dogs, cats, fish, birds, etc.)?", list(env_options.keys()))
+env2 = st.selectbox("Do you have any friends with children the same age as your child?", list(env_options.keys()))
 
 
 
 # ----Insufficient food intake and its physical consequences items (3 questions) ----
 st.subheader("Insufficient food intake items from food insecurity scale")
 # Instruction (shown once)
-st.write("Over the last 4 weeks, how often did the following happen?")
+#st.write("Over the last 4 weeks, how often did the following happen?")
 food_options = {
   
    "Rarely (once or twice in the past four weeks)": 1,
     "Sometimes (three to ten times in the past four weeks)": 2,
     "Often (more than ten times in the past four weeks)": 3
 }
-food1 = st.selectbox("Did you or any household member have to eat a smaller meal than you felt you needed because there was not enough food?", list(food_options.keys()))
-food2 = st.selectbox("Did you or any household member have to eat fewer meals in a day because there was not enough food?" , list(food_options.keys()))
-food3 = st.selectbox("Was there ever no food to eat of any kind in your household because of a lack of resources to get food?", list(food_options.keys()))
-food4 = st.selectbox("Did you or any household member go to sleep at night hungry because there was not enough food?", list(food_options.keys()))
-food5 = st.selectbox("Did you or any household member go a whole day and night without eating anything because there was not enough food?", list(food_options.keys()))
+food1 = st.selectbox("Over the last 4 weeks, did you or any household member have to eat a smaller meal than you felt you needed because there was not enough food?", list(food_options.keys()))
+food2 = st.selectbox("Over the last 4 weeks, did you or any household member have to eat fewer meals in a day because there was not enough food?" , list(food_options.keys()))
+food3 = st.selectbox("Over the last 4 weeks, was there ever no food to eat of any kind in your household because of a lack of resources to get food?", list(food_options.keys()))
+food4 = st.selectbox("Over the last 4 weeks, did you or any household member go to sleep at night hungry because there was not enough food?", list(food_options.keys()))
+food5 = st.selectbox("Over the last 4 weeks, did you or any household member go a whole day and night without eating anything because there was not enough food?", list(food_options.keys()))
 
 food_total = food_options[food1] + food_options[food2] + food_options[food3]+food_options[food4]+food_options[food5]
 st.write(f'Food total score: {food_total}')
